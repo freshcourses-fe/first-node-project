@@ -1,13 +1,17 @@
 'use strict';
-const { MyMath } = require('./MyMath');
-const phoneModeule = require('./Phone');
+// const fs = require('fs/promises');
+// const fs2 = require('fs');
+// fs2.promises;
+const fs = require('fs').promises;
 
-const data = 'test';
+fs.readFile('./.gitignore', { encoding: 'utf-8' })
+  .then((data) => {
+  console.log(data);
+});
 
-console.log(MyMath.sum(1, 10));
 /*
   resolve - этап поиcка модуля
-  
+
     1 подключаются core modules
     2 - ищется фалй
       2.1 ищется фалй с расширением .js
