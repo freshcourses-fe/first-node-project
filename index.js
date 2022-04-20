@@ -2,15 +2,9 @@
 // const fs = require('fs/promises');
 // const fs2 = require('fs');
 // fs2.promises;
-const fs = require('fs').promises;
+var _ = require('lodash');
 
-async function addTextToFile(filePath, text) {
-  const data = await fs.readFile(filePath, { encoding: 'utf-8' });
-  const newText = `\n${data}\n${text}`;
-
-  fs.appendFile('./task.txt', newText, { encoding: 'utf-8' });
-}
-addTextToFile('./.gitignore', 'my text 2134');
+console.log(_.random(-1000,500))
 /*
   resolve - этап поиcка модуля
 
