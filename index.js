@@ -4,11 +4,13 @@
 // fs2.promises;
 const fs = require('fs').promises;
 
-fs.readFile('./.gitignore', { encoding: 'utf-8' })
-  .then((data) => {
-  console.log(data);
-});
+async function addTextToFile(filePath, text) {
+  const data = await fs.readFile(filePath, { encoding: 'utf-8' });
+  const newText = `\n${data}\n${text}`;
 
+  fs.appendFile('./task.txt', newText, { encoding: 'utf-8' });
+}
+addTextToFile('./.gitignore', 'my text 2134');
 /*
   resolve - этап поиcка модуля
 
